@@ -28,4 +28,18 @@ public class Fibonacci extends Progression {
 		return value; 
 	}
 
+	public String toString() {
+		return "Fibo";
+	}
+	@Override
+	public Progression addTo(Arithmetic p2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Progression substractFrom(Arithmetic p2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -1,6 +1,6 @@
 package orderedStructures;
 
-public class Arithmetic extends Progression {
+public class Arithmetic extends Progression{
 	private double commonDifference; 
 	
 	public Arithmetic(double firstValue, double commonDifference) { 
@@ -8,7 +8,6 @@ public class Arithmetic extends Progression {
 		this.commonDifference = commonDifference; 
 	}
 	
-	@Override
 	public double nextValue() {
 		current = current + commonDifference; 
 		return current;
@@ -22,5 +21,19 @@ public class Arithmetic extends Progression {
 		if (n <= 0) 
 			throw new IndexOutOfBoundsException("printAllTerms: Invalid argument value = " + n); 
 		return (this.firstValue()+commonDifference*(n-1)); 
+	}
+
+	public Progression addTo(Arithmetic p2) {
+		double newFirst = this.firstValue() + p2.firstValue();
+		double newDiff = this.commonDifference + p2.commonDifference;
+		Progression newP = new Arithmetic(newFirst, newDiff);
+		return newP;
+	}
+
+	public Progression substractFrom(Arithmetic p2) {
+		double newFirst = this.firstValue() - p2.firstValue();
+		double newDiff = this.commonDifference - p2.commonDifference;
+		Progression newP = new Arithmetic(newFirst, newDiff);
+		return newP;
 	}
 }
